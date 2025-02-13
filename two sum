@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+    int* result = (int*)malloc(2 * sizeof(int));  
+    *returnSize = 2;  
+     
+   
+    for (int i = 0; i < numsSize; i++) {
+        for (int j = i + 1; j < numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+                result[0] = i;  // Store the index of the first number
+                result[1] = j;  // Store the index of the second number
+                return result;  // Return immediately when the pair is found
+            }
+        }
+    }
+    
+    return result; 
+}
